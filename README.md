@@ -12,14 +12,3 @@ You may have to run the following if you get a npm package error code 1 in vagra
 ```mkdir ~/node_modules```<br>
 ```ln -s ~/node_modules```<br>
 ```npm install```<br><br>
-
-### For Android Emulation testing
-must be run in virtualbox window, using gdm and lxde.
-
-## Why do we need a display server?
-for testing, android studio requires a display enviorment to run the android simulator.<br>
-
-## requirements
-Java JDK version 8 <br>
-Android SDK<br>
-Gradle <br>
