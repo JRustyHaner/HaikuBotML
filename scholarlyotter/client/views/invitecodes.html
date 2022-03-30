@@ -1,0 +1,29 @@
+<template name="inviteCodes">
+<h3>Invite Codes</h3>
+    <div class="col-4">
+        <div class="d-flex justify-content-center">
+            <div class="col-3">
+              {{#if invites}}
+             <table class="table table-responsive">
+                 <thead>
+                    <th scope="col" width="50%">Code</th>
+                    <th scope="col" width="50%">Action</th>
+                 </thead>
+
+                {{#each invites}}
+                <tr class="text-left">
+                     <td>
+                        {{this.code}}
+                     </td>
+                    <td>
+                        <button id="delete-invite" data-id="{{this._id}}" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
+                    </td>
+                </tr>
+                {{/each}}
+            </table>
+            {{/if}}
+        </div>
+    </div>
+    </div>
+    <button id="create-invite" class="btn btn-primary">Create Code</button>
+</template>

@@ -1,0 +1,79 @@
+<template name="signup">
+    <h1>Step 1: Create your account.</h1>
+      <p>To continue, we need you to create an account.</p>
+      <form >
+        <div class="form-floating mb-3">
+          <label htmlFor="username">User Name</label>
+  
+          <input
+          id="usernameSignin"
+          type="text"
+          placeholder="Username"
+          name="username"
+          class="form-control"
+          required
+        />
+        <br>
+  
+        <label htmlFor="password">Password</label>
+  
+        <input
+          id="passwordSignin"
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+          class="form-control"
+        />
+        <br>
+          <label htmlFor="email">Email</label>
+          
+          <input
+          id="emailSignin"
+          type="email"
+          placeholder="you@domain.com"
+          name="email"
+          required
+          class="form-control"
+          />
+          <br>
+  
+          <label htmlFor="firstname">First Name</label>
+  
+          <input
+          id="firstnameSignin"
+          type="text"
+          placeholder="First Name"
+          name="firstname"
+          required
+          class="form-control"
+          />
+          <br>
+  
+          <label htmlFor="lastname">Last Name</label>
+          <input
+          id="lastnameSignin"
+          type="text"
+          placeholder="Last Name"
+          name="lastname"
+          required
+          class="form-control"
+          />
+          <br>
+  
+          <input
+          id="linkId"
+          type="text"
+          value="{{linkId}}"
+          name="organization"
+          required
+          hidden
+  
+          />
+          
+  
+      <button class="btn btn-primary" id="signup-submit">Sign Up</button>
+    </div>
+      </form>
+      <a id="home-route" class="btn btn-caution">Go Back</a>
+  </template>

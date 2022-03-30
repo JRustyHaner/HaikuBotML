@@ -16,14 +16,19 @@ Router.configure({
 
 //Set Up Default Router Actions
 const defaultBehaviorRoutes = [
-
+  'code'
 ];
 
 //Set Up Logged In Restricted Routes 
 const restrictedRoutes = [
-
+  'haikuParser',
+  'projects'
 ]
 
+//Set Up Admin Restricted Routes 
+const restrictedAdminRoutes = [
+  'inviteCodes',
+]
 
 const getDefaultRouteAction = function(routeName) {
   return function() {
@@ -55,7 +60,51 @@ for (const route of restrictedRoutes) {
     });
   }
 
+// set up all routes with restricted to login behavior
+for (const route of restrictedAdminRoutes) {
+  Router.route('/' + route, function() {
+    if((Roles.userIsInRole(Meteor.user(), 'admin'))){
+      Roles
+      this.render(route);
+      }else{
+        this.render('profile', {
+          data: {
+            message: "That area is not accessible to users who are not Admins.",
+            alert: "danger"
+          }
+        });
+      }
+    });
+  }  
+
 // setup home route
 Router.route('/', function () {
   this.render('home');
+});
+
+//setup logout
+Router.route('/logout', function(){
+  Meteor.logout();
+  this.render('home');
+})
+
+// route organizational invites
+Router.route('/signup/:_id', function(){
+  // add the subscription handle to our waitlist
+  if(Meteor.user()){
+    Router.go('/');
+  }
+  id = this.params._id;
+  Meteor.call('callInvite',id,(err, res) => {
+    if(res){
+      this.render('signup')
+    } else {
+      this.render('home', {
+        data: {
+          message: "That code cannot be found.",
+          alert: "danger"
+        }
+      });
+    }
+  });
 });

@@ -1,0 +1,30 @@
+<template name="login">
+  
+    <form class="login">
+      <div class="form-floating mb-3">
+        <input
+          id="usernameLogin"
+          type="text"
+          placeholder="Username"
+          name="username"
+          required
+          class="form-control"
+        />
+        <br>
+
+  
+        <input
+          id="passwordLogin"
+          type="password"
+          placeholder="Password"
+          name="password"
+          required
+          class="form-control"
+        />
+        <div style="margin-top:10px;">
+          <button id="login-submit" class="btn btn-primary">Log In</button>
+          <button id="code-submit" class="btn btn-caution">I have a code</button>
+        </div>
+      </div>
+    </form>
+</template>

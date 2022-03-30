@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Make a symbolic link to the sync'ed directory for more "natural" work
-ln -s /vagrant "$HOME/haikuBotML"
+ln -s /vagrant "$HOME/scholarlyotter"
 
 # We will need to be able to compile some binary packages for Meteor
 sudo apt-get update
@@ -46,7 +46,7 @@ sudo systemctl restart mongod
 ###############################################################################
 
 sudo umount .meteor/local -f
-cd haikuBotML
+cd scholarlyotter
 mkdir -p .meteor/local
 
 =
@@ -97,7 +97,7 @@ sudo touch /etc/motd
 cat << EOF | sudo tee /etc/motd
 
 ==============================================================================
-Some helpful hints for working with meteor haikuBotML apps:
+Some helpful hints for working with meteor scholarlyotter apps:
 
  * You can use your favorite code editor and version control application in
    the host operating system - you can just use this little login to start,

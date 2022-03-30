@@ -1,0 +1,29 @@
+<template name="haikuParser">
+    <p>Click the following button to detect haikus in a string</p> 
+    <div class="col-4">
+    <table class="table" >
+        <thead>
+            <th scope="col" width="25%">Input</th>
+            <th scope="col" width="25%">Strict</th>
+            <th scope="col" width="25%">Loose</th>
+            <th scope="col" width="25%">Rejected</th>
+        </thead>
+        <tr>
+            <td>
+                <textarea id="inputText" style="min-height: 500px;"></textarea><br>
+            </td>
+            <td>
+                <textarea id="outputText" style="min-height: 500px;"></textarea><br>
+            </td>
+            <td>
+                <textarea id="closeText" style="min-height: 500px;"></textarea><br>
+            </td>
+            <td>
+                <textarea id="rejectedText" style="min-height: 500px;"></textarea><br>
+            </td>
+        </tr>
+    </table>
+    <button id="parse" class="btn btn-primary">Parse</button>
+    <button id="parse-email" class="btn btn-primary">Import from Emails</button>
+</div>
+</template>
