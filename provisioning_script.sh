@@ -49,7 +49,6 @@ sudo umount .meteor/local -f
 cd scholarlyotter
 mkdir -p .meteor/local
 
-=
 rm packages -rf
 mkdir -p packages
 
