@@ -21,6 +21,7 @@
     "fiber": "^1.0.4",
     "fibers": "^5.0.1",
     "imap": "^0.8.19",
+    "mailparser": "^3.4.0",
     "meteor-node-stubs": "^1.1.0",
     "node-imap": "^0.9.6",
     "react": "^17.0.2",

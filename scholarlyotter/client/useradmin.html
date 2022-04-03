@@ -1,0 +1,29 @@
+<template name="useradmin">
+    <h1>Users</h1>
+    <table class="table" >
+        <thead>
+            <th scope="col" width="25%">Last Name</th>
+            <th scope="col" width="25%">First Name</th>
+            <th scope="col" width="25%">Role</th>
+            <th scope="col" width="25%">Action</th>
+        </thead>
+        {{#each users}}
+        <tr>
+            <td>
+                {{this.lastname}}
+            </td>
+            <td>
+                {{this.firstname}}
+            </td>
+            <td>
+                {{this.role}}
+            </td>
+            <td>
+                <button id="promote-user" data-id="{{this._id}}" class="btn btn-success" style="margin-top: 5px;">Promote</button>
+                <button id="demote-user" data-id="{{this._id}}" class="btn btn-warning" style="margin-top: 5px;">Demote</button>
+                <button id="delete-user" data-id="{{this._id}}" class="btn btn-danger" style="margin-top: 5px;">Delete</button>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</template>

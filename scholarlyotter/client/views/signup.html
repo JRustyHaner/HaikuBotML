@@ -60,16 +60,31 @@
           class="form-control"
           />
           <br>
-  
+          
+          <label htmlFor="role">Role</label>
           <input
-          id="linkId"
+          id="role"
           type="text"
-          value="{{linkId}}"
-          name="organization"
+          value="{{role}}"
+          disabled
+          placeholder="{{role}}"
+          name="lastname"
           required
-          hidden
-  
+          class="form-control"
           />
+          <br>
+          <label htmlFor="role">Code</label>
+          <input
+          id="code"
+          type="text"
+          value="{{code}}"
+          disabled
+          placeholder="{{code}}"
+          name="lastname"
+          required
+          class="form-control"
+          />
+          <br>
           
   
       <button class="btn btn-primary" id="signup-submit">Sign Up</button>

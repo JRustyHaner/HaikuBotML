@@ -10,7 +10,9 @@ Template.signup.events({
         const emailAddr = $('#emailSignin').val();
         const firstName = $('#firstnameSignin').val();
         const lastName = $('#lastnameSignin').val();
-        Meteor.call('createNewUser', user, pass, emailAddr,firstName, lastName, function(error, result){
+        const role = $('#role').val();
+        const code = $('#code').val();
+        Meteor.call('createNewUser', user, pass, emailAddr,firstName, lastName, code, role, function(error, result){
             if(error){
                 console.log(error);
             }
@@ -29,5 +31,6 @@ Template.signup.events({
         Router.go('/')
     }
 });
+
 
 

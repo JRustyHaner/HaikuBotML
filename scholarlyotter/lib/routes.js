@@ -28,6 +28,7 @@ const restrictedRoutes = [
 //Set Up Admin Restricted Routes 
 const restrictedAdminRoutes = [
   'inviteCodes',
+  'useradmin'
 ]
 
 const getDefaultRouteAction = function(routeName) {
@@ -97,7 +98,13 @@ Router.route('/signup/:_id', function(){
   id = this.params._id;
   Meteor.call('callInvite',id,(err, res) => {
     if(res){
-      this.render('signup')
+      this.render('signup', {
+        data:{
+          role: res.role,
+          code: id
+        }
+      }
+      );
     } else {
       this.render('home', {
         data: {

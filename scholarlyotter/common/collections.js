@@ -4,3 +4,4 @@ import { Mongo } from 'meteor/mongo';
 Invites = new Mongo.Collection('invites');
 MailRecieved = new Mongo.Collection('emails');
 Haikus = new Mongo.Collection('haikus');
+HaikuLSAData = new Mongo.Collection('haikuLSAData')
